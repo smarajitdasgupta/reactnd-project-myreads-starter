@@ -179,3 +179,8 @@ body, .app {
   text-align: center;
   font-size: 0.8em;
 }
+
+/* no match */
+.no-match{
+  text-align: center;
+}

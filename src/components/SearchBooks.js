@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 import Book from './Book';
 import * as BooksAPI from '../BooksAPI';
@@ -56,13 +55,20 @@ class SearchBooks extends React.Component {
             </div>
           </div>
           <div className="search-books-results">
-            <ol className="books-grid">
-              {searchResults.map((book) => (
-                <li key={book.id}>
-                  <Book book={book} changeBookShelf={this.props.changeBookShelf} />
-                </li>
-              ))}
-            </ol>
+
+              {searchResults.length > 0 ?
+
+                (<ol className="books-grid">
+                  {searchResults.map((book) => (
+                    <li key={book.id}>
+                      <Book book={book} changeBookShelf={this.props.changeBookShelf} />
+                    </li>
+                  ))}
+                </ol>
+                ) : ( <p>Search is limited to <a target="_blank" href="https://github.com/smarajitdasgupta/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md">this list of keywords</a>.</p>)
+              }
+
+
           </div>
         </div>
     );

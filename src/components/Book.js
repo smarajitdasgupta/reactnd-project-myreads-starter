@@ -11,8 +11,7 @@ class Book extends React.Component {
       authors: PropTypes.array,
       shelf: PropTypes.string,
       categories: PropTypes.array
-    }),
-    changeBookShelf: PropTypes.func.isRequired
+    })
   }
 
   handleBookShelfChange = (e) => {
@@ -20,7 +19,7 @@ class Book extends React.Component {
   }
 
   render() {
-    const { book, changeBookShelf } = this.props;
+    const { book } = this.props;
     return (
         <div className="book">
           <div className="book-top">
